@@ -1,0 +1,75 @@
+[System]
+Name='MyFIS'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[0 10.8]
+NumMFs=3
+MF1='Low(L)':'trapmf',[0 0 2.592 4.752]
+MF2='Medium(M)':'trapmf',[2.592 4.752 6.912 9.072]
+MF3='High(H)':'trapmf',[6.912 9.072 10.8 10.8]
+
+[Input2]
+Name='input2'
+Range=[0 125.1]
+NumMFs=3
+MF1='Near(N)':'trapmf',[0 0 40.03 77.56]
+MF2='Average(A)':'trimf',[40.03 77.56 115.1]
+MF3='Far(F)':'trapmf',[77.56 115.1 125.1 125.1]
+
+[Input3]
+Name='input3'
+Range=[0 4]
+NumMFs=3
+MF1='Less(L)':'trapmf',[0 0 1.1 1.5]
+MF2='Average(A)':'trapmf',[1.1 1.5 2.7 3.1]
+MF3='Many(M)':'trapmf',[2.7 3.1 4 4]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=5
+MF1='VeryLow(VL)':'trapmf',[0 0 0.1 0.16]
+MF2='Low(L)':'trapmf',[0.1 0.16 0.36 0.42]
+MF3='Moderate(M)':'trapmf',[0.36 0.42 0.58 0.62]
+MF4='High(H)':'trapmf',[0.58 0.62 0.8 0.89]
+MF5='VeryHigh(VH)':'trapmf',[0.8 0.89 1 1]
+
+[Rules]
+1 1 1, 3 (1) : 1
+1 1 2, 4 (1) : 1
+1 1 3, 5 (1) : 1
+1 2 1, 3 (1) : 1
+1 2 2, 4 (1) : 1
+1 2 3, 5 (1) : 1
+1 3 1, 3 (1) : 1
+1 3 2, 4 (1) : 1
+1 3 3, 5 (1) : 1
+2 1 1, 2 (1) : 1
+2 1 2, 3 (1) : 1
+2 1 3, 4 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 3 (1) : 1
+2 2 3, 4 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 3 (1) : 1
+2 3 3, 4 (1) : 1
+3 1 1, 1 (1) : 1
+3 1 2, 2 (1) : 1
+3 1 3, 3 (1) : 1
+3 2 1, 1 (1) : 1
+3 2 2, 2 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 1, 1 (1) : 1
+3 3 2, 2 (1) : 1
+3 3 3, 3 (1) : 1
